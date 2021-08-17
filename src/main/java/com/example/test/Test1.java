@@ -6,8 +6,8 @@ public class Test1 {
 
     public static void main(String[] args) {
         var t = new Test1();
-        String password = t.passwordInput();
-        t.passwordChecker(password);
+        String res = t.passwordChecker();
+        System.out.println(res);
     }
 
     private String passwordInput() {
@@ -26,7 +26,8 @@ public class Test1 {
         return containsNumber;
     }
 
-    public void passwordChecker(String password) {
+    public String passwordChecker() {
+        String password = passwordInput();
         String errorMsg = "";
         String successMsg = "Your password is " + password;
         if (password.equals(password.toUpperCase())) {
@@ -38,6 +39,6 @@ public class Test1 {
         } else if (password.length() < 8) {
             errorMsg = "Must be at least 8 characters long.";
         }
-        System.out.println(errorMsg.equals("") ? successMsg : errorMsg);
+        return errorMsg.equals("") ? successMsg : errorMsg;
     }
 }
