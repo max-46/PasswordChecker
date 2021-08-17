@@ -29,15 +29,15 @@ public class Test1 {
         String successMsg = "Your password is " + password;
         if (password.equals(password.toUpperCase()))
         {
-            errorMsg = "Must contain lower case letter.";
+            errorMsg = "Must contain a lower case letter.";
         }
         else if (password.equals(password.toLowerCase()))
         {
-            errorMsg = "Must contain upper case letter.";
+            errorMsg = "Must contain an upper case letter.";
         }
         else if (!containsNum(password))
         {
-            errorMsg = "Must contain number 0-9.";
+            errorMsg = "Must contain a number.";
         }
         else if (password.length() < 8)
         {
