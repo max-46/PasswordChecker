@@ -12,16 +12,7 @@ public class Test1 {
         System.out.println("Enter password:");
         return reader.nextLine();
     }
-    public static void passwordChecker(String password)
-    {
-        if (password.equals(password.toUpperCase()))
-        {
-            System.out.println("Must contain lower case letter.");
-        }
-        if (password.equals(password.toLowerCase()))
-        {
-            System.out.println("Must contain upper case letter.");
-        }
+    static boolean containsNum(String password) {
         boolean containsNumber = false;
         for (int checkNumber = 0; checkNumber < 10; checkNumber++)
         {
@@ -29,13 +20,29 @@ public class Test1 {
                 containsNumber = true;
             }
         }
-        if (!containsNumber)
+        return containsNumber;
+    }
+    public static void passwordChecker(String password)
+    {
+        String errorMsg = "";
+        String successMsg = "Your password is " + password;
+        if (password.equals(password.toUpperCase()))
         {
-            System.out.println("Must contain number 0-9.");
+            errorMsg = "Must contain lower case letter.";
+        }
+        if (password.equals(password.toLowerCase()))
+        {
+            errorMsg = "Must contain upper case letter.";
+        }
+
+        if (!containsNum(password))
+        {
+            errorMsg = "Must contain number 0-9.";
         }
         if (password.length() < 8)
         {
-            System.out.println("Must be at least 8 characters long.");
+            errorMsg = "Must be at least 8 characters long.";
         }
+        System.out.println(errorMsg != "" ? errorMsg : successMsg);
     }
 }
