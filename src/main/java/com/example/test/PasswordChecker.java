@@ -2,11 +2,11 @@ package com.example.test;
 
 import java.util.Scanner;
 
-public class Test1 {
+public class PasswordChecker {
 
     public static void main(String[] args) {
-        var t = new Test1();
-        String res = t.passwordChecker();
+        var t = new PasswordChecker();
+        String res = t.check();
         System.out.println(res);
     }
 
@@ -26,7 +26,7 @@ public class Test1 {
         return containsNumber;
     }
 
-    public String passwordChecker() {
+    public String check() {
         String password = passwordInput();
         String errorMsg = "";
         String successMsg = "Your password is " + password;
