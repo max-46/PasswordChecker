@@ -43,6 +43,6 @@ public class Test1 {
         {
             errorMsg = "Must be at least 8 characters long.";
         }
-        System.out.println(errorMsg != "" ? errorMsg : successMsg);
+        System.out.println(errorMsg.equals("") ? errorMsg : successMsg);
     }
 }
