@@ -1,6 +1,8 @@
 package com.example.test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class PasswordChecker {
@@ -27,7 +29,7 @@ public class PasswordChecker {
     }
 
     public void getPasswords() {
-        String[] passwords = new String[4];
+        List<String> passwords = new ArrayList<>();
         int i = 0;
         while (i < 4) {
             String password = userInput();
@@ -41,10 +43,10 @@ public class PasswordChecker {
                 System.out.println("Must be at least 8 characters long.");
             } else {
                 System.out.println("Your password is " + password);
-                passwords[i] = password;
+                passwords.add(password);
                 i++;
             }
         }
-        System.out.println("Your passwords are " + Arrays.toString(passwords));
+        System.out.println("Your passwords are " + passwords.toString());
     }
 }
