@@ -42,7 +42,7 @@ public class PasswordChecker {
             } else {
                 System.out.println("Your password is " + password);
                 passwords[i] = password;
-                i++; // Not incrementing i
+                i++;
             }
         }
         System.out.println("Your passwords are " + Arrays.toString(passwords));
