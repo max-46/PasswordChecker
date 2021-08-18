@@ -30,7 +30,6 @@ public class PasswordChecker {
         String[] passwords = new String[4];
         int i = 0;
         while (passwords[3] == null) {
-            System.out.println(i);
             String password = userInput();
             if (password.equals(password.toUpperCase())) {
                 System.out.println("Must contain a lower case letter.");
