@@ -6,18 +6,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PasswordChecker {
-    
+
     int strength;
 
     public PasswordChecker() {
         strength = 0;
     }
-    
-    
 
     public static void main(String[] args) {
         var pc = new PasswordChecker();
-        pc.getPasswords();
+        pc.getPassword();
     }
 
     private String userInput() {
@@ -57,20 +55,20 @@ public class PasswordChecker {
         }
         System.out.println(output);
     }
-    
+
     private boolean hasLowerCase(String str) {
         return !str.equals(str.toUpperCase());
     }
-    
-       private boolean hasUpperCase(String str) {
+
+    private boolean hasUpperCase(String str) {
         return !str.equals(str.toLowerCase());
     }
-       
+
     private boolean isLong(String str) {
         return str.length() >= 8;
     }
 
-    public void getPasswords() {
+    public void getPassword() {
         String password = userInput();
         if (hasUpperCase(password)) {
             strength++;
