@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class PasswordChecker {
 
-    public PasswordChecker() {
-    }
-
     public static void main(String[] args) {
         var pc = new PasswordChecker();
         pc.getPassword();
@@ -28,7 +25,7 @@ public class PasswordChecker {
         return containsNumber;
     }
 
-    private void getPassword() {
+    public void getPassword() {
         while (true) {
             String password = userInput();
             if (password.equals(password.toUpperCase())) {
