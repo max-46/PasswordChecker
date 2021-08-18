@@ -1,12 +1,13 @@
 package com.example.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PasswordChecker {
 
     public static void main(String[] args) {
         var pc = new PasswordChecker();
-        pc.getPassword();
+        pc.getPasswords();
     }
 
     private String userInput() {
@@ -25,8 +26,11 @@ public class PasswordChecker {
         return containsNumber;
     }
 
-    public void getPassword() {
-        while (true) {
+    public void getPasswords() {
+        String[] passwords = new String[4];
+        while (passwords[3] == null) {
+            int i = 0;
+            System.out.println(i);
             String password = userInput();
             if (password.equals(password.toUpperCase())) {
                 System.out.println("Must contain a lower case letter.");
@@ -38,8 +42,10 @@ public class PasswordChecker {
                 System.out.println("Must be at least 8 characters long.");
             } else {
                 System.out.println("Your password is " + password);
-                break;
+                passwords[i] = password;
+                i++; // Not incrementing i
             }
         }
+        System.out.println("Your passwords are " + Arrays.toString(passwords));
     }
 }
