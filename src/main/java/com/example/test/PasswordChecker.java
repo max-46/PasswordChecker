@@ -50,16 +50,16 @@ public class PasswordChecker {
     public void getPasswords() {
         int strength = 0;
         String password = userInput();
-        if (password.equals(password.toUpperCase())) {
+        if (!password.equals(password.toUpperCase())) {
             strength++;
         }
-        if (password.equals(password.toLowerCase())) {
+        if (!password.equals(password.toLowerCase())) {
             strength++;
         }
-        if (!containsNum(password)) {
+        if (containsNum(password)) {
             strength++;
         }
-        if (password.length() < 8) {
+        if (password.length() >= 8) {
             strength++;
         }
         System.out.println("Your password is " + password);
