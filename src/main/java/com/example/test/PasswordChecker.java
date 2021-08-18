@@ -28,8 +28,8 @@ public class PasswordChecker {
 
     public void getPasswords() {
         String[] passwords = new String[4];
+        int i = 0;
         while (passwords[3] == null) {
-            int i = 0;
             System.out.println(i);
             String password = userInput();
             if (password.equals(password.toUpperCase())) {
