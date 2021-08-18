@@ -6,6 +6,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PasswordChecker {
+    
+    int strength;
+
+    public PasswordChecker() {
+        strength = 0;
+    }
+    
+    
 
     public static void main(String[] args) {
         var pc = new PasswordChecker();
@@ -28,7 +36,7 @@ public class PasswordChecker {
         return containsNumber;
     }
 
-    private void printStrength(int strength) {
+    private void printStrength() {
         String output = "Strength = ";
         switch (strength) {
             case 0:
@@ -43,26 +51,40 @@ public class PasswordChecker {
             case 3:
                 output += "strong";
                 break;
+            case 4:
+                output += "very strong";
+                break;
         }
         System.out.println(output);
     }
+    
+    private boolean hasLowerCase(String str) {
+        return !str.equals(str.toUpperCase());
+    }
+    
+       private boolean hasUpperCase(String str) {
+        return !str.equals(str.toLowerCase());
+    }
+       
+    private boolean isLong(String str) {
+        return str.length() >= 8;
+    }
 
     public void getPasswords() {
-        int strength = 0;
         String password = userInput();
-        if (!password.equals(password.toUpperCase())) {
+        if (hasUpperCase(password)) {
             strength++;
         }
-        if (!password.equals(password.toLowerCase())) {
+        if (hasLowerCase(password)) {
             strength++;
         }
         if (containsNum(password)) {
             strength++;
         }
-        if (password.length() >= 8) {
+        if (isLong(password)) {
             strength++;
         }
         System.out.println("Your password is " + password);
-        printStrength(strength);
+        printStrength();
     }
 }
